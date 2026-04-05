@@ -1,19 +1,11 @@
+import logging
+import uuid
 import threading
+import os  # <--- Make sure this is here too
 from flask import Flask
-
-# This creates a tiny fake website to trick Render into staying alive
-app = Flask('')
-@app.route('/')
-def home():
-    return "Bot is legacy and running!"
-
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = threading.Thread(target=run)
-    t.start()
-
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
+from supabase import create_client, Client  # <--- THIS IS THE FIX
 # --- CONFIG ---
 TOKEN = "8583491216:AAHpnkcZZLScsK6b-24DDJND28nhioVWwYI"
 URL = "https://wbnjaftbodhpwsykrsod.supabase.co"
