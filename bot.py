@@ -8,8 +8,8 @@ from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQu
 from supabase import create_client, Client  # <--- THIS IS THE FIX
 # --- CONFIG ---
 TOKEN = "8583491216:AAHpnkcZZLScsK6b-24DDJND28nhioVWwYI"
-URL = "https://wbnjaftbodhpwsykrsod.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndibmphZnRib2RocHdzeWtyc29kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MTM2NzgsImV4cCI6MjA5MDk4OTY3OH0.RtpIadAogc3XFQjaIcK7SXIQO3_VSX_RP7Gu8MI51-k"
+SUPABASE_URL = "https://wbnjaftbodhpwsykrsod.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndibmphZnRib2RocHdzeWtyc29kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MTM2NzgsImV4cCI6MjA5MDk4OTY3OH0.RtpIadAogc3XFQjaIcK7SXIQO3_VSX_RP7Gu8MI51-k"
 supabase: Client = create_client(URL, KEY)
 
 logging.basicConfig(level=logging.INFO)
